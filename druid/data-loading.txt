@@ -1,0 +1,62 @@
+{
+  "type": "index_parallel",
+  "spec": {
+    "ioConfig": {
+      "type": "index_parallel",
+      "inputSource": {
+        "type": "local",
+        "baseDir": "/path/to/",
+        "filter": "dataset.csv"
+      },
+      "inputFormat": {
+        "type": "csv",
+        "findColumnsFromHeader": true
+      }
+    },
+    "tuningConfig": {
+      "type": "index_parallel",
+      "partitionsSpec": {
+        "type": "dynamic"
+      }
+    },
+    "dataSchema": {
+      "dataSource": "datapoints",
+      "timestampSpec": {
+        "column": "time",
+        "format": "iso"
+      },
+      "dimensionsSpec": {
+        "dimensions": [
+          {
+            "type": "long",
+            "name": "id_station"
+          },
+          {
+            "type": "double",
+            "name": "temperature"
+          },
+          {
+            "type": "double",
+            "name": "discharge"
+          },
+          {
+            "type": "double",
+            "name": "pH"
+          },
+          {
+            "type": "double",
+            "name": "oxygen"
+          },
+          {
+            "type": "double",
+            "name": "oxygen_saturation"
+          }
+        ]
+      },
+      "granularitySpec": {
+        "queryGranularity": "none",
+        "rollup": false
+      }
+    }
+  }
+}

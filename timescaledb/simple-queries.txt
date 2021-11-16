@@ -1,0 +1,32 @@
+-- Q1 : Range query
+
+SELECT time, pH FROM datapoints where id_station = 4 and time > TIMESTAMP '2019-06-01 00:00:00' - INTERVAL '90' DAY and time < TIMESTAMP '2019-06-01 00:00:00';
+
+explain analyse SELECT time, pH FROM datapoints where id_station = 4 and time > TIMESTAMP '2019-06-01 00:00:00' - INTERVAL '90' DAY and time < TIMESTAMP '2019-06-01 00:00:00';
+
+
+-- Q2: Normalization
+explain analyse SELECT AVG(oxygen), stddev(oxygen) FROM datapoints where id_station = 4 and time > TIMESTAMP '2019-06-01 00:00:00' - INTERVAL '90' DAY and time < TIMESTAMP '2019-06-01 00:00:00';
+
+
+-- Q3: Downsampling
+explain analyse 
+SELECT time_bucket('1 hour', time) as time_1h, id_station, avg(pH) as avg_value
+FROM datapoints
+WHERE id_station = 4 AND time > '2019-06-21 00:00:00' AND time < timestamp '2019-06-21 00:00:00' + interval '1 day'
+GROUP BY time_1h, id_station
+ORDER BY time_1h asc;
+
+
+-- Q4: Upsampling
+
+SELECT
+  time_bucket_gapfill('10 minutes', time) AS second,
+  id_station,
+  avg(pH) AS value,
+  locf(avg(pH))
+FROM datapoints
+WHERE id_station = 4 AND time > '2019-06-21 00:00:00' AND time < timestamp '2019-06-21 00:00:00' + interval '1 hour'
+GROUP BY second, id_station
+ORDER BY second;
+

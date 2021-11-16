@@ -1,0 +1,90 @@
+# Q1 : Simple SQL Select 
+
+SELECT __time, pH
+FROM dataset_100k
+where id_station = 4
+and __time > TIMESTAMP '2019-03-01 00:00:00' 
+and __time < TIMESTAMP '2019-03-01 00:00:00' + INTERVAL '12' DAY
+
+
+
+# Q2 : Aggregation
+
+{
+  "queryType": "timeseries",
+  "dataSource": "dataset_100k",
+  "intervals": [ "2019-03-01T00:00:00.000/2019-03-21T00:00:00.000" ],
+  "granularity": "day",
+  "aggregations": [
+    { "type": "doubleMean", "name": "pH", "fieldName": "pH" }
+  ],
+  "context": {
+    "grandTotal": true
+  }
+}
+
+
+# Q3 : Downsampling
+
+{
+  "queryType": "timeseries",
+  "dataSource": "dataset_100k",
+  "intervals": [
+    "2019-03-01T00:00:00.000/2019-03-21T00:00:00.000"
+  ],
+  "granularity": "hour",
+  "aggregations": [
+    {
+      "type": "doubleMean",
+      "name": "pH",
+      "fieldName": "pH"
+    }
+  ],
+  "filter": {
+    "type": "and",
+    "fields": [
+      {
+        "type": "selector",
+        "dimension": "id_station",
+        "value": "3"
+      }
+    ]
+  },
+  "context": {
+    "grandTotal": true,
+    "skipEmptyBuckets": "true"
+  }
+}
+
+
+# Q4 : Upsampling
+
+{
+  "queryType": "timeseries",
+  "dataSource": "dataset_100k",
+  "intervals": [
+    "2019-03-01T00:00:00.000/2019-03-21T00:00:00.000"
+  ],
+  "granularity": "hour",
+  "aggregations": [
+    {
+      "type": "doubleMean",
+      "name": "pH",
+      "fieldName": "pH"
+    }
+  ],
+  "filter": {
+    "type": "and",
+    "fields": [
+      {
+        "type": "selector",
+        "dimension": "id_station",
+        "value": "3"
+      }
+    ]
+  },
+  "context": {
+    "grandTotal": true,
+    "skipEmptyBuckets": "true"
+  }
+}
