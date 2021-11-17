@@ -80,7 +80,7 @@ ___
 
 ### UDF Configuration (Ubuntu/Debian)
 
-- Enter the ```Databases/reconv_udf/``` folder and run the following commands
+- Enter the ```Databases/reconv_udf/``` folder and run the following commands, the installation scripts takes around 15 minutes. 
 
 
 ``` bash 
