@@ -10,11 +10,10 @@ ___
 ___
 ## Build
 
-- Build all databases using the installation script located in the root folder
+- Install the prerequisites
 
 ```bash
-cd Databases
-sh install_prerequisites.sh
+sh install_init.sh
 ```
 
 To build a particular database, run the installation script located in the database folder. For example, to install druid
