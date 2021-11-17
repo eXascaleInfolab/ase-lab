@@ -5,7 +5,6 @@ ___
 
 - Ubuntu 18 or higher
 - Clone this repository
-- All other dependencies will be installed via the install script.
 
 ___
 ## Build
