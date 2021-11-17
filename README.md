@@ -59,7 +59,7 @@ $ ./apache-druid-0.22.0/bin/start-micro-quickstart
 Then test the Druid server: 
 
 ``` bash 
-curl http://diufrm102:8888/unified-console.html
+curl http://localhost:8888/unified-console.html
 ```  
 
 
