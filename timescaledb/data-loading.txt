@@ -1,9 +1,3 @@
--- launch postgres and enable timescaledb 
-
-$ psql
-$ CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
-
-
 -- create table 
 
 CREATE TYPE datapoint AS ( 
