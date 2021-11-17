@@ -47,6 +47,12 @@ ___
 
 The queries could be found in ```{database}/simple-queries.txt```
 
+## Druid
+
+```./apache-druid-0.22.0/bin/start-micro-quickstart```
+
+## TimescaleDB
+
 
 ___
 ## Part II: User Defined Function on TSMS: Recovery of missing values inside MonetDB
