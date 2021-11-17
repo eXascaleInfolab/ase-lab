@@ -26,8 +26,7 @@ sh install.sh
 ___
 ## Dataset
 
-We use four different datasets from the IoT environment:
-- Water Data with the following format: 
+We use water Data with the following format: 
 
 ```time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
 2019-03-01 00:00:00,47,407.052,0.954,7.79,12.14,12.14
@@ -37,7 +36,7 @@ We use four different datasets from the IoT environment:
 ```
 
 ___
-## Simple Queries
+## Part I: Simple Queries
 
 ### Q1 : Time Range Select 
 ### Q2 : Time Range Aggregation 
@@ -48,7 +47,7 @@ ___
 
 
 ___
-## User Defined Function on TSMS: Recovery of missing values inside MonetDB
+## Part II: User Defined Function on TSMS: Recovery of missing values inside MonetDB
 
 
 ### UDF Configuration (Ubuntu/Debian)
@@ -72,24 +71,8 @@ $ pip3 install numpy
 $ sh createdb.sh
 ```
 
-#### Python Path Configuration
 
-- Install Anaconda2 from: https://docs.anaconda.com/anaconda/install/ in your 'HOME' folder
-
-- Add the following line to (.profile or .bash_profile):
-
- `export PYTHONPATH="${PYTHONPATH}:'HOME'/anaconda2/lib/python2.7/site-packages/"`
-
-- Execute and restart:
-``` bash 
-$ source .profile (or source bash_profile)
-$ sudo shutdown -r now
-```
-
-___
-
-
-## Execution
+### Execution
 
 ### Recovery of missing values in time series data
 
