@@ -56,6 +56,12 @@ To launch Druid, run the following script:
 $ ./apache-druid-0.22.0/bin/start-micro-quickstart
 ```
 
+Then test the Druid server: 
+
+``` bash 
+curl http://diufrm102:8888/unified-console.html
+```  
+
 
 ## [TimescaleDB](https://docs.timescale.com/timescaledb/latest/getting-started/#let-x27-s-get-up-and-running)
 
