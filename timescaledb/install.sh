@@ -31,4 +31,5 @@ sudo -u postgres sh -c "echo \"shared_preload_libraries = 'timescaledb'\" >> /et
 echo "Please be ready to input the password. Press [ENTER] to continue. If the password request times out, please run the following command separately \"sudo -u postgres /etc/init.d/postgresql restart\""
 read line
 
-sudo -u postgres /etc/init.d/postgresql restart
+# sudo -u postgres /etc/init.d/postgresql restart
+ sudo systemctl restart postgresql
