@@ -18,7 +18,7 @@ sh install_init.sh
 - To build a particular database, run the installation script located in the database folder. For example, to install druid
 
 ```bash
-cd Databases/druid
+cd Databases/timescaledb
 sh install.sh
 ```
 ___
@@ -45,6 +45,16 @@ The queries for each system are found in ```Databases/{database}/simple-queries.
 #### Q4 : Upsampling
 
 
+## [TimescaleDB](https://docs.timescale.com/timescaledb/latest/getting-started/#let-x27-s-get-up-and-running)
+
+To launch and enable TimescaleDB, run the following script:  
+``` bash 
+$ psql
+psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+
+```
+
+
 ## [Druid](https://druid.apache.org/docs/latest/design/index.html)
 
 To launch Druid, run the following script: 
@@ -58,17 +68,6 @@ Then test the Druid server:
 ``` bash 
 curl http://localhost:8888/unified-console.html
 ```  
-
-
-## [TimescaleDB](https://docs.timescale.com/timescaledb/latest/getting-started/#let-x27-s-get-up-and-running)
-
-To launch and enable TimescaleDB, run the following script:  
-``` bash 
-$ psql
-psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
-
-```
-
 
 
 ___
@@ -95,16 +94,7 @@ We show how to recover overlapping missing blocks in two climate time series loc
 ``` bash
 $ cd Databases/recovdb_udf
 $ sh connectdb.sh
+sql> select * from time_series; 
 sql> \<./recov_udf.sql
-sql> \q
-```
-
-### Centroid Decomposition of time series data
-
-We show how to decompose a matrix of time series located in `decomposition/input/climate.csv`
-
-``` bash
-$ sh connectdb.sh
-sql> \<./decomp_udf.sql
 sql> \q
 ```
