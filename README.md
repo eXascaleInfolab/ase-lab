@@ -42,10 +42,10 @@ ___
 
 The queries for each system are found in ```Databases/{database}/simple-queries.txt```
 
-### Q1 : Time Range Select 
-### Q2 : Time Range Aggregation 
-### Q3 :  Downsampling
-### Q4 : Upsampling
+#### Q1 : Time Range Select 
+#### Q2 : Time Range Aggregation 
+#### Q3 :  Downsampling
+#### Q4 : Upsampling
 
 
 ## [Druid](https://druid.apache.org/docs/latest/design/index.html)
