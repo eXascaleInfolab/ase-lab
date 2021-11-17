@@ -61,18 +61,6 @@ $ sh monetdb_install.sh
 $ sh createdb.sh
 ```
 
-### UDF Configuration (macOS)
-
-- Enter the cloned repo and run the following commands
-
-
-``` bash 
-$ brew install monetdb
-$ pip3 install numpy
-$ sh createdb.sh
-```
-
-
 ### Execution
 
 ### Recovery of missing values in time series data
