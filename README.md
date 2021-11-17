@@ -48,7 +48,7 @@ The queries for each system are found in ```{database}/simple-queries.txt```
 ### Q4 : Upsampling
 
 
-## Druid
+## [Druid](https://druid.apache.org/docs/latest/design/index.html)
 
 To launch Druid, run the following script: 
 
@@ -57,7 +57,7 @@ $ ./apache-druid-0.22.0/bin/start-micro-quickstart
 ```
 
 
-## TimescaleDB
+## [TimescaleDB](https://docs.timescale.com/timescaledb/latest/getting-started/#let-x27-s-get-up-and-running)
 
 To launch and enable TimescaleDB, run the following script:  
 ``` bash 
@@ -65,6 +65,8 @@ $ psql
 psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 
 ```
+
+
 
 ___
 ## Part II: User Defined Function on TSMS: Recovery of missing values inside MonetDB
