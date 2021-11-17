@@ -16,6 +16,8 @@ ___
 sh install_init.sh
 ```
 
+### Build a Database
+
 To build a particular database, run the installation script located in the database folder. For example, to install druid
 
 ```bash
