@@ -27,7 +27,7 @@ sh install.sh
 ___
 ## Dataset
 
-We use water Data with the following format: 
+We use water Data in the ```datasets.csv``` with the following format: 
 
 ```
 time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
