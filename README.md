@@ -93,6 +93,5 @@ We show how to recover missing blocks in multiple climate time series (located i
 $ cd Databases/recovdb_udf
 $ sh connectdb.sh
 sql> \<./recov_udf.sql
-sql> select * from time_series; 
 sql> \q
 ```
