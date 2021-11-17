@@ -45,7 +45,7 @@ ___
 ### Q3 :  Downsampling
 ### Q4 : Upsampling
 
-
+The queries could be found in ```{database}/simple-queries.txt```
 
 
 ___
