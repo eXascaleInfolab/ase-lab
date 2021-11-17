@@ -28,7 +28,7 @@ DECLARE
 	delta DOUBLE PRECISION;
 BEGIN
 	start_time := clock_timestamp();
-	COPY datapoints FROM '/home/abdel/tsdbs-lab/dataset.csv' DELIMITER ',' CSV HEADER;
+	COPY datapoints FROM '/home/ubuntu/tsdb-lab2/dataset.csv' DELIMITER ',' CSV HEADER;
 	end_time := clock_timestamp();
 	delta:= extract(epoch from end_time) - extract(epoch from start_time) ;
 
