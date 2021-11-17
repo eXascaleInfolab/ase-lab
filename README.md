@@ -80,10 +80,11 @@ ___
 
 ### UDF Configuration (Ubuntu/Debian)
 
-- Enter the ```Databases/reconv_udf/``` folder and run the following commands, the installation script takes around 15 minutes. 
+- Enter the ```Databases/recov_udf/``` folder and run the following commands, the installation script takes around 15 minutes. 
 
 
 ``` bash 
+$ cd Databases/recov_udf/
 $ sh monetdb_install.sh
 $ sh createdb.sh
 ```
