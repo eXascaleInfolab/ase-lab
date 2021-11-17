@@ -27,7 +27,7 @@ sh install.sh
 ___
 ## Dataset
 
-We use water Data in the ```datasets.csv``` of 1M readings belonging to 50 different stations with the following format: 
+We use water data in the ```datasets.csv``` of 1M readings belonging to 50 different stations with the following format: 
 
 ```
 time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
@@ -40,19 +40,31 @@ time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
 ___
 ## Part I: Simple Queries
 
+The queries for each system are found in ```{database}/simple-queries.txt```
+
 ### Q1 : Time Range Select 
 ### Q2 : Time Range Aggregation 
 ### Q3 :  Downsampling
 ### Q4 : Upsampling
 
-The queries could be found in ```{database}/simple-queries.txt```
 
 ## Druid
 
-```./apache-druid-0.22.0/bin/start-micro-quickstart```
+To launch Druid, run the following script: 
+
+``` bash 
+$ ./apache-druid-0.22.0/bin/start-micro-quickstart
+```
+
 
 ## TimescaleDB
 
+To launch and enable TimescaleDB, run the following script:  
+``` bash 
+$ psql
+psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+
+```
 
 ___
 ## Part II: User Defined Function on TSMS: Recovery of missing values inside MonetDB
