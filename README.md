@@ -15,7 +15,7 @@ ___
 sh install_init.sh
 ```
 
-- To build a particular database, run the installation script located in the database folder. For example, to install druid
+- To build a given database, run the installation script located in the database folder. For example, to install druid
 
 ```bash
 cd Databases/timescaledb
@@ -24,7 +24,7 @@ sh install.sh
 ___
 ## Dataset
 
-We use water data in the ```datasets.csv``` of 1M readings belonging to 50 different stations with the following format: 
+We will use water data (```datasets.csv```) of 1M readings originating from 50 different stations with the following format: 
 
 ```
 time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
@@ -37,7 +37,7 @@ time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
 ___
 ## Part I: Simple Queries
 
-The queries for each system are found in ```Databases/{database}/simple-queries.txt```
+The queries for each system can be found in ```Databases/{database}/simple-queries.txt```
 
 #### Q1 : Time Range Select 
 #### Q2 : Time Range Aggregation 
@@ -47,7 +47,7 @@ The queries for each system are found in ```Databases/{database}/simple-queries.
 
 ## [TimescaleDB](https://docs.timescale.com/timescaledb/latest/getting-started/#let-x27-s-get-up-and-running)
 
-To launch and enable TimescaleDB, run the following script:  
+- To launch and enable TimescaleDB, run the following script:  
 ``` bash 
 $ psql
 psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
@@ -55,13 +55,13 @@ psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 
 ## [Druid](https://druid.apache.org/docs/latest/design/index.html)
 
-To launch Druid, run the following script: 
+- To launch Druid, run the following script: 
 
 ``` bash 
 $ ./apache-druid-0.22.0/bin/start-micro-quickstart
 ```
 
-Then test the Druid server: 
+- Then, test the Druid server: 
 
 ``` bash 
 curl http://localhost:8888/unified-console.html
@@ -69,12 +69,14 @@ curl http://localhost:8888/unified-console.html
 
 
 ___
-## Part II: User Defined Function on TSMS: Recovery of missing values inside MonetDB
+## Part II: Advanced Analytic using User Defined Functions (UDFs) 
+
+*Task* : Recovery of missing values in time series using MonetDB
 
 
-### UDF Configuration (Ubuntu/Debian)
+### UDF Configuration 
 
-- Enter the ```Databases/recov_udf/``` folder and run the following commands, the installation script takes around 15 minutes. 
+- Enter the ```Databases/recov_udf/``` folder and run the following commands:
 
 
 ``` bash 
@@ -85,12 +87,12 @@ $ sh createdb.sh
 
 ### Recovery of missing values in time series data
 
-We show how to recover overlapping missing blocks in two climate time series located in `recovery/input/original.txt`
+We show how to recover missing blocks in multiple climate time series (located in `recovery/input/original.txt`)
 
 ``` bash
 $ cd Databases/recovdb_udf
 $ sh connectdb.sh
-sql> select * from time_series; 
 sql> \<./recov_udf.sql
+sql> select * from time_series; 
 sql> \q
 ```
