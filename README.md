@@ -1,8 +1,5 @@
-# RecovDB: Recovery of missing values inside MonetDB
+# User Defined Function on TSMS: Recovery of missing values inside MonetDB
 
-## Prerequisities 
-
-- Clone this repository
 
 ### UDF Configuration (Ubuntu/Debian)
 
@@ -63,33 +60,4 @@ We show how to decompose a matrix of time series located in `decomposition/input
 $ sh connectdb.sh
 sql> \<./decomp_udf.sql
 sql> \q
-```
-
-### Datasets customization
-
-To add a dataset to the recovery:
--  Name your file `original.txt` and add it to `recovery/input/`
-- Requirements:  columns= 4, column separator: empty space, row separator: newline
-
-To add a dataset to the decomposition :
-- Name your file `climate.csv` and add it to `decomposition/input/`
-- Requirements:  column separator: empty space, row separator: newline
-
-### Graphical RecovDB
-
-RecovDB is also avilable as a GUI [here](http://revival.exascale.info/recovery/recovdb.php).
-___
-
-## Citation
-
-Please cite the following paper when using RecovDB:
-``` bash
-@inproceedings{arous2019recovdb,
-  title={RecovDB: Accurate and Efficient Missing Blocks Recovery for Large Time Series},
-  author={Arous, Ines and Khayati, Mourad and Cudr{\'e}-Mauroux, Philippe and Zhang, Ying and Kersten, Martin and Stalinlov, Svetlin},
-  booktitle={2019 IEEE 35th International Conference on Data Engineering (ICDE)},
-  pages={1976--1979},
-  year={2019},
-  organization={IEEE}
-}
 ```
