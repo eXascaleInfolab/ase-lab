@@ -89,6 +89,7 @@ $ sh createdb.sh
 We show how to recover overlapping missing blocks in two climate time series located in `recovery/input/original.txt`
 
 ``` bash
+$ cd Databases/recovdb_udf
 $ sh connectdb.sh
 sql> \<./recov_udf.sql
 sql> \q
