@@ -51,9 +51,7 @@ To launch and enable TimescaleDB, run the following script:
 ``` bash 
 $ psql
 psql> CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
-
 ```
-
 
 ## [Druid](https://druid.apache.org/docs/latest/design/index.html)
 
@@ -84,8 +82,6 @@ $ cd Databases/recov_udf/
 $ sh monetdb_install.sh
 $ sh createdb.sh
 ```
-
-### Execution
 
 ### Recovery of missing values in time series data
 
