@@ -40,7 +40,7 @@ time,id_station,temperature,discharge,pH,oxygen,oxygen_saturation
 ___
 ## Part I: Simple Queries
 
-The queries for each system are found in ```{database}/simple-queries.txt```
+The queries for each system are found in ```Databases/{database}/simple-queries.txt```
 
 ### Q1 : Time Range Select 
 ### Q2 : Time Range Aggregation 
