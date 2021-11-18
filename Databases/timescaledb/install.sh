@@ -32,3 +32,5 @@ echo "Please be ready to input the password. Press [ENTER] to continue. If the p
 read line
 
 sudo -u postgres /etc/init.d/postgresql restart
+
+sudo service postgresql restart
