@@ -21,6 +21,8 @@ sh install_init.sh
 cd Databases/timescaledb
 sh install.sh
 ```
+### Alternatively
+- You can use the `docker-compose.yaml` file to create an instance of TimescaleDB locally. 
 ___
 ## Dataset
 
