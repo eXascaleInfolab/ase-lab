@@ -22,7 +22,15 @@ cd Databases/timescaledb
 sh install.sh
 ```
 ### Alternatively
-- You can use the `docker-compose.yaml` file to create an instance of TimescaleDB locally. 
+- You can use the `docker-compose.yaml` file to create an instance of TimescaleDB locally.
+```bash
+docker-compose up -d
+``` 
+- Yet, you still need a PostgreSQL client to interact with it.
+```bash
+sudo apt install -y postgresql-11
+``` 
+- [Commands to load data](./Database/../Databases/timescaledb/data-loading.txt) should work out of the box since the absolute path is the same in the Docker container.
 ___
 ## Dataset
 
