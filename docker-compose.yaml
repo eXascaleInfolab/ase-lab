@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  timescaledb:
+    container_name: timescaledb # name to address the container 'e.g. docker stop timescaledb'
+    image: timescale/timescaledb:latest-pg11 # change to appropriate version
+    environment:
+      # - POSTGRES_PASSWORD=yourpassword # uncomment if you wish to use a password
+      - POSTGRES_HOST_AUTH_METHOD=trust # allow all connections without a password
+      - TS_TUNE_MAX_CONNS=200
+      - POSTGRES_USER=${USER}
+    network_mode: host # to connect from psql host client (make sure port 5432 is free)
+    volumes:
+      - "./:/home/abdel/tsdbs-lab/" # for the absolute path commands to work 
+      - "/var/run/postgresql/:/var/run/postgresql" # mounting unix socket
+
+
+
